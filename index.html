@@ -11,7 +11,7 @@
             var form = document.getElementById('sendForm');
             var input = document.getElementById('sendText');
 	//=========================================================================================================		
-		    var ws = new WebSocket('ws://localhost:2022');
+		    var ws = new WebSocket('ws://localhost:8081');
             window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
             let finalTranscript = '';
             let recognition = new window.SpeechRecognition();
