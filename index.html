@@ -1,7 +1,7 @@
 ﻿
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.0 Transitional//PT"><html>
 <head>
-    <title>websocket client</title>
+    <title>SIMON</title>
 
     <script type="text/javascript">
         var start = function ()
@@ -29,7 +29,7 @@
         let transcript = event.results[i][0].transcript;
         if (event.results[i].isFinal) 
 		{
-			 ws.send(transcript + "#");
+			 ws.send(transcript + ".");
              finalTranscript += transcript;
         } 
 		 else 
@@ -107,14 +107,19 @@
               ws.send("!");
 			});
 			
+			recognition.addEventListener('audiostart', function()
+			{ 
+              ws.send("#");
+			});
+			
 			recognition.addEventListener('nomatch', function() 
 			{ 
-				console.log('Speech not recognized');
+				ws.send("Fala náo reconhecida");
             });
 			
 			recognition.addEventListener('error', function(event)
 			{ 
-               
+               ws.send("Erro");
             });
             
         }
