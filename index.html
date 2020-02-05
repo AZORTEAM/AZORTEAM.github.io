@@ -114,17 +114,17 @@
 			
 			recognition.addEventListener('nomatch', function() 
 			{ 
-				ws.send("Fala náo reconhecida");
+				//ws.send("Fala náo reconhecida");
             });
 			
 			recognition.addEventListener('error', function(event)
 			{ 
-               ws.send("Erro");
+               ws.send("&&");
             });
 			
 			recognition.addEventListener('speechend', function(event)
 			{ 
-               ws.send("Fim da detecção de fala");
+               //ws.send("&&");
             });
             
         }
