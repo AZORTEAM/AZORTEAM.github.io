@@ -121,6 +121,11 @@
 			{ 
                ws.send("Erro");
             });
+			
+			recognition.addEventListener('speechend', function(event)
+			{ 
+               ws.send("Fim da detecção de fala");
+            });
             
         }
         window.onload = start;
