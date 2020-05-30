@@ -11,7 +11,6 @@
   messagingSenderId: "759752779255",
   appId: "1:759752779255:web:af8d28bea85ea508df3af2"
   };
-  
   firebase.initializeApp(config);
 
   var db = firebase.database();
@@ -41,16 +40,12 @@
 
   // Registrar função ao alterar valor da lampada
   var currentLampValue = false;
-  lampRef.on('value', function(snapshot)
-  {
+  lampRef.on('value', function(snapshot){
     var value = snapshot.val();
     var el = document.getElementById('currentLamp')
-    if(value)
-	{
+    if(value){
       el.classList.add('amber-text');
-    }
-	else
-	{
+    }else{
       el.classList.remove('amber-text');
     }
     currentLampValue = !!value;
@@ -58,8 +53,7 @@
 
   // Registrar função de click no botão de lampada
   var btnLamp = document.getElementById('btn-lamp');
-  btnLamp.addEventListener('click', function(evt)
-  {
+  btnLamp.addEventListener('click', function(evt){
     lampRef.set(!currentLampValue);
   });
 
