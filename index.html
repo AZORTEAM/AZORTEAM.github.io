@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Minha Casa</title>
+    <title>Casa</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -56,70 +56,128 @@
     <div class="container content">
       <br/>
       <div class="row">
-        <div class="col s12 m6">
-          <div class="card">
+	  <div class="col s12 m6">
+          <div class="card" style="padding-bottom:20px">
             <div class="card-image center">
-              <span id="currentTemp" class="statistic">-</span>
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">
-                Temperatura
-                <i class="material-icons right">more_vert</i>
-              </span>
-              Clique para ver histórico
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">
-                Histórico
-                <i class="material-icons right">close</i>
-              </span>
-              <canvas id="tempLineChart"></canvas>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6">
-          <div class="card">
-            <div class="card-image center">
-              <span id="currentUmid" class="statistic">-</span>
-            </div>
-            <div class="card-content activator">
-              <span class="card-title grey-text text-darken-4">
-                Umidade
-                <i class="material-icons right">more_vert</i>
-              </span>
-              Clique para ver histórico
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">
-                Histórico
-                <i class="material-icons right">close</i>
-              </span>
-              <canvas id="umidLineChart"></canvas>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6">
-          <div class="card">
-            <div class="card-image center">
-              <i id="currentPresence" class="material-icons statistic">my_location</i>
+              <i id="tv" class="material-icons statistic">flash_on</i>
             </div>
             <div class="card-content">
               <span class="card-title grey-text text-darken-4">
-                Presença
+                Tv
               </span>
+              <a class="waves-effect waves-light btn col s12" id="btn-tv">
+                <i class="material-icons left">flash_on</i>
+                Ligar/Desligar
+              </a>
             </div>
           </div>
         </div>
         <div class="col s12 m6">
           <div class="card" style="padding-bottom:20px">
             <div class="card-image center">
-              <i id="currentLamp" class="material-icons statistic">flash_on</i>
+              <i id="varanda" class="material-icons statistic">flash_on</i>
             </div>
             <div class="card-content">
               <span class="card-title grey-text text-darken-4">
-                Lampada
+                Varanda
               </span>
-              <a class="waves-effect waves-light btn col s12" id="btn-lamp">
+              <a class="waves-effect waves-light btn col s12" id="btn-varanda">
+                <i class="material-icons left">flash_on</i>
+                Ligar/Desligar
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card" style="padding-bottom:20px">
+            <div class="card-image center">
+              <i id="sala" class="material-icons statistic">flash_on</i>
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4">
+                Sala
+              </span>
+              <a class="waves-effect waves-light btn col s12" id="btn-sala">
+                <i class="material-icons left">flash_on</i>
+                Ligar/Desligar
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card" style="padding-bottom:20px">
+            <div class="card-image center">
+              <i id="banheiro" class="material-icons statistic">flash_on</i>
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4">
+                Banheiro
+              </span>
+              <a class="waves-effect waves-light btn col s12" id="btn-banheiro">
+                <i class="material-icons left">flash_on</i>
+                Ligar/Desligar
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card" style="padding-bottom:20px">
+            <div class="card-image center">
+              <i id="cozinha" class="material-icons statistic">flash_on</i>
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4">
+                Cozinha
+              </span>
+              <a class="waves-effect waves-light btn col s12" id="btn-cozinha">
+                <i class="material-icons left">flash_on</i>
+                Ligar/Desligar
+              </a>
+            </div>
+          </div>
+        </div>
+		<div class="col s12 m6">
+          <div class="card" style="padding-bottom:20px">
+            <div class="card-image center">
+              <i id="quarto" class="material-icons statistic">flash_on</i>
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4">
+                Quarto
+              </span>
+              <a class="waves-effect waves-light btn col s12" id="btn-quarto">
+                <i class="material-icons left">flash_on</i>
+                Ligar/Desligar
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card" style="padding-bottom:20px">
+            <div class="card-image center">
+              <i id="ventilador" class="material-icons statistic">flash_on</i>
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4">
+                Ventilador
+              </span>
+              <a class="waves-effect waves-light btn col s12" id="btn-ventilador">
+                <i class="material-icons left">flash_on</i>
+                Ligar/Desligar
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card" style="padding-bottom:20px">
+            <div class="card-image center">
+              <i id="quintal" class="material-icons statistic">flash_on</i>
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4">
+                Quintal
+              </span>
+              <a class="waves-effect waves-light btn col s12" id="btn-quintal">
                 <i class="material-icons left">flash_on</i>
                 Ligar/Desligar
               </a>

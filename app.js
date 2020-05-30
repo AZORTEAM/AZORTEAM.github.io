@@ -19,7 +19,15 @@
   var tempRef = db.ref('temperature');
   var umidRef = db.ref('humidity');
   var presenceRef = db.ref('presence');
-  var lampRef = db.ref('sala');
+  
+  var varanda = db.ref('varanda');
+  var sala = db.ref('sala');
+  var banheiro = db.ref('banheiro');
+  var cozinha = db.ref('cozinha');
+  var quarto = db.ref('quarto');
+  var ventilador = db.ref('ventilador');
+  var quintal = db.ref('quintal');
+  var tv = db.ref('frente');
 
 
   // Registra as funções que atualizam os gráficos e dados atuais da telemetria
@@ -38,26 +46,191 @@
     }
   });
 
+//==================================================================
+
   // Registrar função ao alterar valor da lampada
-  var currentLampValue = false;
-  lampRef.on('value', function(snapshot){
+  var varandavalue = false;
+  var salavalue = false;
+  var banheirovalue = false;
+  var cozinhavalue = false;
+  var quartovalue = false;
+  var ventiladorvalue = false;
+  var quintalvalue = false;
+  var tvvalue = false;
+  
+varanda.on('value', function(snapshot)
+  {
     var value = snapshot.val();
-    var el = document.getElementById('currentLamp')
-    if(value){
+    var el = document.getElementById('varanda')
+    if(value)
+	{
       el.classList.add('amber-text');
-    }else{
+    }
+	else
+	{
       el.classList.remove('amber-text');
     }
-    currentLampValue = !!value;
+    varandavalue = !!value;
   });
 
   // Registrar função de click no botão de lampada
-  var btnLamp = document.getElementById('btn-lamp');
-  btnLamp.addEventListener('click', function(evt){
-    lampRef.set(!currentLampValue);
+  var btnVaranda = document.getElementById('btn-varanda');
+  btnVaranda.addEventListener('click', function(evt){
+  varanda.set(!varandavalue);
   });
 
+sala.on('value', function(snapshot)
+  {
+    var value = snapshot.val();
+    var el = document.getElementById('sala')
+    if(value)
+	{
+      el.classList.add('amber-text');
+    }
+	else
+	{
+      el.classList.remove('amber-text');
+    }
+    salavalue = !!value;
+  });
+
+  // Registrar função de click no botão de lampada
+  var btnSala = document.getElementById('btn-sala');
+  btnSala.addEventListener('click', function(evt){
+  sala.set(!salavalue);
+  });
+  
+banheiro.on('value', function(snapshot)
+  {
+    var value = snapshot.val();
+    var el = document.getElementById('banheiro')
+    if(value)
+	{
+      el.classList.add('amber-text');
+    }
+	else
+	{
+      el.classList.remove('amber-text');
+    }
+    banheirovalue = !!value;
+  });
+
+  // Registrar função de click no botão de lampada
+  var btnBanheiro = document.getElementById('btn-banheiro');
+  btnBanheiro.addEventListener('click', function(evt){
+  banheiro.set(!banheirovalue);
+  });
+  
+cozinha.on('value', function(snapshot)
+  {
+    var value = snapshot.val();
+    var el = document.getElementById('cozinha')
+    if(value)
+	{
+      el.classList.add('amber-text');
+    }
+	else
+	{
+      el.classList.remove('amber-text');
+    }
+    cozinhavalue = !!value;
+  });
+
+  // Registrar função de click no botão de lampada
+  var btnCozinha = document.getElementById('btn-cozinha');
+  btnCozinha.addEventListener('click', function(evt){
+  cozinha.set(!cozinhavalue);
+  });
+  
+quarto.on('value', function(snapshot)
+  {
+    var value = snapshot.val();
+    var el = document.getElementById('quarto')
+    if(value)
+	{
+      el.classList.add('amber-text');
+    }
+	else
+	{
+      el.classList.remove('amber-text');
+    }
+    quartovalue = !!value;
+  });
+
+  // Registrar função de click no botão de lampada
+  var btnQuarto = document.getElementById('btn-quarto');
+  btnQuarto.addEventListener('click', function(evt){
+  quarto.set(!quartovalue);
+  });
+  
+ventilador.on('value', function(snapshot)
+  {
+    var value = snapshot.val();
+    var el = document.getElementById('ventilador')
+    if(value)
+	{
+      el.classList.add('amber-text');
+    }
+	else
+	{
+      el.classList.remove('amber-text');
+    }
+    ventiladorvalue = !!value;
+  });
+
+  // Registrar função de click no botão de lampada
+  var btnVentilador = document.getElementById('btn-ventilador');
+  btnVentilador.addEventListener('click', function(evt){
+  ventilador.set(!ventiladorvalue);
+  });
+  
+quintal.on('value', function(snapshot)
+  {
+    var value = snapshot.val();
+    var el = document.getElementById('quintal')
+    if(value)
+	{
+      el.classList.add('amber-text');
+    }
+	else
+	{
+      el.classList.remove('amber-text');
+    }
+    quintalvalue = !!value;
+  });
+
+  // Registrar função de click no botão de lampada
+  var btnQuintal = document.getElementById('btn-quintal');
+  btnQuintal.addEventListener('click', function(evt){
+  quintal.set(!quintalvalue);
+  });
+  
+tv.on('value', function(snapshot)
+  {
+    var value = snapshot.val();
+    var el = document.getElementById('tv')
+    if(value)
+	{
+      el.classList.add('amber-text');
+    }
+	else
+	{
+      el.classList.remove('amber-text');
+    }
+    tvvalue = !!value;
+  });
+
+  // Registrar função de click no botão de lampada
+  var btnTv = document.getElementById('btn-tv');
+  btnTv.addEventListener('click', function(evt){
+  tv.set(!tvvalue);
+  });
+  
+
 })();
+
+
+
 
 
 // Retorna uma função que de acordo com as mudanças dos dados
