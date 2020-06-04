@@ -20,14 +20,14 @@
   var umidRef = db.ref('humidity');
   var presenceRef = db.ref('presence');
   
-  var varanda = db.ref('varanda');
-  var sala = db.ref('sala');
-  var banheiro = db.ref('banheiro');
-  var cozinha = db.ref('cozinha');
-  var quarto = db.ref('quarto');
-  var ventilador = db.ref('ventilador');
-  var quintal = db.ref('quintal');
-  var tv = db.ref('frente');
+  var varanda = db.ref('cargas/varanda');
+  var sala = db.ref('cargas/sala');
+  var banheiro = db.ref('cargas/banheiro');
+  var cozinha = db.ref('cargas/cozinha');
+  var quarto = db.ref('cargas/quarto');
+  var ventilador = db.ref('cargas/ventilador');
+  var quintal = db.ref('cargas/quintal');
+  var tv = db.ref('cargas/frente');
 
 
   // Registra as funções que atualizam os gráficos e dados atuais da telemetria
