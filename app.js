@@ -25,7 +25,7 @@
   var banheiro = db.ref('cargas/banheiro');
   var cozinha = db.ref('cargas/cozinha');
   var quarto = db.ref('cargas/quarto');
-  var ventilador = db.ref('cargas/ventilador');
+  var ventilador = db.ref('cargas/tomada');
   var quintal = db.ref('cargas/quintal');
   var tv = db.ref('cargas/frente');
 
