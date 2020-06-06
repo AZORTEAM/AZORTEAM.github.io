@@ -360,8 +360,8 @@ function buildLineChart(el, label, data){
             // when the connection is closed, this method is called
             ws.onclose = function () 
 			{
-                inc.innerHTML += 'CONEXÃO FECHADA.<br/>';
-				window.location.reload();
+                //inc.innerHTML += 'CONEXÃO FECHADA.<br/>';
+				//window.location.reload();
 				
             }
             
