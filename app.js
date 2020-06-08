@@ -76,7 +76,7 @@ varanda.on('value', function(snapshot)
   // Registrar função de click no botão de lampada
   var btnVaranda = document.getElementById('btn-varanda');
   btnVaranda.addEventListener('click', function(evt){
-  varanda.set('"' + !varandavalue + '"');
+  varandavalue = \"!!value"\;
   });
 
 sala.on('value', function(snapshot)
