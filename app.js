@@ -70,7 +70,7 @@ varanda.on('value', function(snapshot)
 	{
       el.classList.remove('amber-text');
     }
-    varandavalue = !!value;
+    varandavalue = &quot + !!value + &quot;
   });
 
   // Registrar função de click no botão de lampada
