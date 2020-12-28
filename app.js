@@ -20,14 +20,14 @@
   var umidRef = db.ref('humidity');
   var presenceRef = db.ref('presence');
   
-  var varanda = db.ref('cargas/varanda');
-  var sala = db.ref('cargas/sala');
-  var banheiro = db.ref('cargas/banheiro');
-  var cozinha = db.ref('cargas/cozinha');
-  var quarto = db.ref('cargas/quarto');
-  var ventilador = db.ref('cargas/tomada');
-  var quintal = db.ref('cargas/quintal');
-  var tv = db.ref('cargas/frente');
+  var varanda = db.ref('VARANDA');
+  var sala = db.ref('SALA');
+  var banheiro = db.ref('BANHEIRO');
+  var cozinha = db.ref('COZINHA');
+  var quarto = db.ref('QUARTO');
+  var ventilador = db.ref('VENTILADOR');
+  var quintal = db.ref('QUINTAL');
+  var tv = db.ref('FRENTE');
 
 
   // Registra as funções que atualizam os gráficos e dados atuais da telemetria
@@ -49,181 +49,207 @@
 //==================================================================
 
   // Registrar função ao alterar valor da lampada
-  var varandavalue = false;
-  var salavalue = false;
-  var banheirovalue = false;
-  var cozinhavalue = false;
-  var quartovalue = false;
-  var ventiladorvalue = false;
-  var quintalvalue = false;
-  var tvvalue = false;
+  var varandavalue = "false";
+  var salavalue = "false";
+  var banheirovalue = "false";
+  var cozinhavalue = "14=false";
+  var quartovalue = "false";
+  var ventiladorvalue = "false";
+  var quintalvalue = "false";
+  var tvvalue = "false";
+  var init = 0;
+  var end = 3;
   
 varanda.on('value', function(snapshot)
   {
-    var value = snapshot.val();
+    var value = snapshot.val().substr(3);
+	var pin = snapshot.val().substr(init, end);
     var el = document.getElementById('varanda')
-    if(value)
+    if(value == "true")
 	{
       el.classList.add('amber-text');
+	  varandavalue = pin + "false";
     }
-	else
+	else if(value == "false")
 	{
       el.classList.remove('amber-text');
+	  varandavalue = pin + "true";
     }
-    varandavalue = !!value;
+	
   });
 
   // Registrar função de click no botão de lampada
-  var btnVaranda = document.getElementById('btn-varanda');
-  btnVaranda.addEventListener('click', function(evt){
-  varanda.set(!varandavalue);
+  var btnvaranda = document.getElementById('btn-varanda');
+  btnvaranda.addEventListener('click', function(evt){
+  varanda.set(varandavalue);
   });
 
 sala.on('value', function(snapshot)
   {
-    var value = snapshot.val();
+    var value = snapshot.val().substr(3);
+	var pin = snapshot.val().substr(init, end);
     var el = document.getElementById('sala')
-    if(value)
+    if(value == "true")
 	{
       el.classList.add('amber-text');
+	  salavalue = pin + "false";
     }
-	else
+	else if(value == "false")
 	{
       el.classList.remove('amber-text');
+	  salavalue = pin + "true";
     }
-    salavalue = !!value;
+	
   });
 
   // Registrar função de click no botão de lampada
-  var btnSala = document.getElementById('btn-sala');
-  btnSala.addEventListener('click', function(evt){
-  sala.set(!salavalue);
+  var btnsala = document.getElementById('btn-sala');
+  btnsala.addEventListener('click', function(evt){
+  sala.set(salavalue);
   });
   
 banheiro.on('value', function(snapshot)
-  {
-    var value = snapshot.val();
+    {
+    var value = snapshot.val().substr(3);
+	var pin = snapshot.val().substr(init, end);
     var el = document.getElementById('banheiro')
-    if(value)
+    if(value == "true")
 	{
       el.classList.add('amber-text');
+	  banheirovalue = pin + "false";
     }
-	else
+	else if(value == "false")
 	{
       el.classList.remove('amber-text');
+	  banheirovalue = pin + "true";
     }
-    banheirovalue = !!value;
+	
   });
 
   // Registrar função de click no botão de lampada
-  var btnBanheiro = document.getElementById('btn-banheiro');
-  btnBanheiro.addEventListener('click', function(evt){
-  banheiro.set(!banheirovalue);
+  var btnbanheiro = document.getElementById('btn-banheiro');
+  btnbanheiro.addEventListener('click', function(evt){
+  banheiro.set(banheirovalue);
   });
   
 cozinha.on('value', function(snapshot)
   {
-    var value = snapshot.val();
+    var value = snapshot.val().substr(3);
+	var pin = snapshot.val().substr(init, end);
     var el = document.getElementById('cozinha')
-    if(value)
+    if(value == "true")
 	{
       el.classList.add('amber-text');
+	  cozinhavalue = pin + "false";
     }
-	else
+	else if(value == "false")
 	{
       el.classList.remove('amber-text');
+	  cozinhavalue = pin + "true";
     }
-    cozinhavalue = !!value;
+	
   });
 
   // Registrar função de click no botão de lampada
-  var btnCozinha = document.getElementById('btn-cozinha');
-  btnCozinha.addEventListener('click', function(evt){
-  cozinha.set(!cozinhavalue);
+  var btncozinha = document.getElementById('btn-cozinha');
+  btncozinha.addEventListener('click', function(evt){
+  cozinha.set(cozinhavalue);
   });
   
 quarto.on('value', function(snapshot)
   {
-    var value = snapshot.val();
+    var value = snapshot.val().substr(3);
+	var pin = snapshot.val().substr(init, end);
     var el = document.getElementById('quarto')
-    if(value)
+    if(value == "true")
 	{
       el.classList.add('amber-text');
+	  quartovalue = pin + "false";
     }
-	else
+	else if(value == "false")
 	{
       el.classList.remove('amber-text');
+	  quartovalue = pin + "true";
     }
-    quartovalue = !!value;
+	
   });
 
   // Registrar função de click no botão de lampada
-  var btnQuarto = document.getElementById('btn-quarto');
-  btnQuarto.addEventListener('click', function(evt){
-  quarto.set(!quartovalue);
+  var btnquarto = document.getElementById('btn-quarto');
+  btnquarto.addEventListener('click', function(evt){
+  quarto.set(quartovalue);
   });
   
 ventilador.on('value', function(snapshot)
   {
-    var value = snapshot.val();
+    var value = snapshot.val().substr(3);
+	var pin = snapshot.val().substr(init, end);
     var el = document.getElementById('ventilador')
-    if(value)
+    if(value == "true")
 	{
       el.classList.add('amber-text');
+	  ventiladorvalue = pin + "false";
     }
-	else
+	else if(value == "false")
 	{
       el.classList.remove('amber-text');
+	  ventiladorvalue = pin + "true";
     }
-    ventiladorvalue = !!value;
+	
   });
 
   // Registrar função de click no botão de lampada
-  var btnVentilador = document.getElementById('btn-ventilador');
-  btnVentilador.addEventListener('click', function(evt){
-  ventilador.set(!ventiladorvalue);
+  var btnventilador = document.getElementById('btn-ventilador');
+  btnventilador.addEventListener('click', function(evt){
+  ventilador.set(ventiladorvalue);
   });
   
 quintal.on('value', function(snapshot)
   {
-    var value = snapshot.val();
+    var value = snapshot.val().substr(3);
+	var pin = snapshot.val().substr(init, end);
     var el = document.getElementById('quintal')
-    if(value)
+    if(value == "true")
 	{
       el.classList.add('amber-text');
+	  quintalvalue = pin + "false";
     }
-	else
+	else if(value == "false")
 	{
       el.classList.remove('amber-text');
+	  quintalvalue = pin + "true";
     }
-    quintalvalue = !!value;
+	
   });
 
   // Registrar função de click no botão de lampada
-  var btnQuintal = document.getElementById('btn-quintal');
-  btnQuintal.addEventListener('click', function(evt){
-  quintal.set(!quintalvalue);
+  var btnquintal = document.getElementById('btn-quintal');
+  btnquintal.addEventListener('click', function(evt){
+  quintal.set(quintalvalue);
   });
   
 tv.on('value', function(snapshot)
   {
-    var value = snapshot.val();
+    var value = snapshot.val().substr(3);
+	var pin = snapshot.val().substr(init, end);
     var el = document.getElementById('tv')
-    if(value)
+    if(value == "true")
 	{
       el.classList.add('amber-text');
+	  tvvalue = pin + "false";
     }
-	else
+	else if(value == "false")
 	{
       el.classList.remove('amber-text');
+	  tvvalue = pin + "true";
     }
-    tvvalue = !!value;
+	
   });
 
   // Registrar função de click no botão de lampada
-  var btnTv = document.getElementById('btn-tv');
-  btnTv.addEventListener('click', function(evt){
-  tv.set(!tvvalue);
+  var btntv = document.getElementById('btn-tv');
+  btntv.addEventListener('click', function(evt){
+  tv.set(tvvalue);
   });
   
 
@@ -318,7 +344,7 @@ function buildLineChart(el, label, data){
             //inc.innerHTML += "TENTANDO CONECTAR AO SERVIDOR...<br/>";
 
             // create a new websocket and connect
-            window.ws = new wsImpl('ws://localhost:2022/');
+            //window.ws = new wsImpl('ws://127.0.0.1:8081');
 
             // when data is comming from the server, this metod is called
             ws.onmessage = function (evt) 
@@ -326,10 +352,7 @@ function buildLineChart(el, label, data){
                // inc.innerHTML += evt.data + '<br/>';
 				if (evt.data === 'reconhecimento de voz')
                 {
-				  
                      recognition.start();
-                   
-                  
                 }
 				
 				if (evt.data === 'Pesquisa')
