@@ -52,7 +52,7 @@
   var varandavalue = "false";
   var salavalue = "false";
   var banheirovalue = "false";
-  var cozinhavalue = "14=false";
+  var cozinhavalue = "false";
   var quartovalue = "false";
   var ventiladorvalue = "false";
   var quintalvalue = "false";
